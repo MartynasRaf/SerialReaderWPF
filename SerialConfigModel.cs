@@ -9,7 +9,7 @@ namespace SerialReader
 {
     public class SerialConfigModel
     {
-        public SerialPort SerialPort { get; set; }
+        public SerialPort SerialPort { get; set; } = new SerialPort();
         public string PortName
         {
             get => SerialPort.PortName;
