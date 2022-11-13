@@ -1,0 +1,50 @@
+﻿<Window x:Class="SerialReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerialReader"
+        mc:Ignorable="d"
+        Name="container"
+        Title="MainWindow" Height="200" Width="400">
+    <StackPanel Orientation="Vertical">
+        
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Port Name" Width="200"/>
+            <TextBox Name="portName" Width="200" Text="{Binding ElementName=container, Path=DataContext.PortName}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Baudrate" Width="200"/>
+            <TextBox Name="baudrate" Width="200" Text="{Binding ElementName=container, Path=DataContext.BaudRate}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Parity" Width="200"/>
+            <ComboBox Name="parity" Width="200" SelectedItem="{Binding ElementName=container, Path=DataContext.Parity}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Handshake" Width="200"/>
+            <ComboBox Name="handshake" Width="200" SelectedItem="{Binding ElementName=container, Path=DataContext.HandShake}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Data Bits" Width="200"/>
+            <TextBox Name="dataBits" Width="200" Text="{Binding ElementName=container, Path=DataContext.DataBits}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Stop Bits" Width="200"/>
+            <ComboBox Name="stopBits" Width="200" SelectedItem="{Binding ElementName=container, Path=DataContext.StopBits}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="File Save Location" Width="200"/>
+            <TextBox Name="fileSaveLocation" Width="200" Text="{Binding ElementName=container, Path=DataContext.FileLocation}"/>
+        </StackPanel>
+
+        <Button Height="20" Content="Connect and Monitor" MouseDown="Button_MouseDown"/>
+
+    </StackPanel>
+</Window>
